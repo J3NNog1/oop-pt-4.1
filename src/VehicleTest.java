@@ -16,7 +16,16 @@ public class VehicleTest {
             System.out.println("Generic engine start");
         }
     }
+    class Car extends Vehicle {
+        Car(String brand) {
+            super(brand);
+        }
 
+        @Override
+        void startEngine() {
+            System.out.println("Car engine start");
+        }
+    }
 
 
 
