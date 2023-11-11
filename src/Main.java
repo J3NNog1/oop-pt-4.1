@@ -88,6 +88,27 @@ class Truck extends Vehicle {
     }
 }
 
+class Bicycle extends Vehicle {
+    private int numberOfGears;
+
+    public Bicycle(String brand, int numberOfGears) {
+        super(brand);
+        this.numberOfGears = numberOfGears;
+    }
+
+    // Method overriding
+    @Override
+    public void start() {
+        System.out.println("Starting the bicycle.");
+        // Additional bicycle-specific logic if needed
+        super.start(); // Using super to call the overridden method in the parent class
+    }
+
+    public void pedal() {
+        System.out.println("Pedaling the bicycle.");
+    }
+}
+
 
 
 // Main class
@@ -117,5 +138,12 @@ public class Main {
         myTruck.stop();
 
         System.out.println(); // Adding a newline for better output separation
+
+        Bicycle myBicycle = new Bicycle("Schwinn", 10);
+        myBicycle.displayInfo();
+        myBicycle.start();
+        myBicycle.pedal();
+        myBicycle.stop();
+
     }
 }
