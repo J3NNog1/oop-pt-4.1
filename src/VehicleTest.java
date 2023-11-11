@@ -34,13 +34,24 @@ public class VehicleTest {
     }
 
     class Motorcycle extends Vehicle {
-        Motorcycle(String brand) {
+        boolean hasSidecar;
+        Motorcycle(String brand, boolean hasSidecar) {
+
             super(brand);
+            this.hasSidecar = hasSidecar;
         }
 
         @Override
         void startEngine() {
-            System.out.println("Motorcycle engine start");
+            System.out.println("Motorcycle engine started");
+        }
+
+        void ride() {
+            if (hasSidecar) {
+                System.out.println(brand + " motorcycle is riding with a sidecar.");
+            } else {
+                System.out.println(brand + " motorcycle is riding solo.");
+            }
         }
     }
 
