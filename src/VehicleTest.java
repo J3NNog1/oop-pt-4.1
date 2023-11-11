@@ -17,13 +17,19 @@ public class VehicleTest {
         }
     }
     class Car extends Vehicle {
-        Car(String brand) {
+        int numDoors;
+
+        Car(String brand, int numDoors) {
             super(brand);
+            this.numDoors = numDoors;
         }
 
         @Override
         void startEngine() {
             System.out.println("Car engine start");
+        }
+        void drive() {
+            System.out.println(brand + " car is driving with " + numDoors + " doors.");
         }
     }
 
