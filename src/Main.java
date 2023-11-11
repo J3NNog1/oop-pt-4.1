@@ -67,6 +67,28 @@ class Motorcycle extends Vehicle {
         System.out.println("Riding the motorcycle.");
     }
 }
+class Truck extends Vehicle {
+    private double cargoCapacity;
+
+    public Truck(String brand, double cargoCapacity) {
+        super(brand);
+        this.cargoCapacity = cargoCapacity;
+    }
+
+    // Method overriding
+    @Override
+    public void start() {
+        System.out.println("Starting the truck.");
+        // Additional truck-specific logic if needed
+        super.start(); // Using super to call the overridden method in the parent class
+    }
+
+    public void loadCargo() {
+        System.out.println("Loading cargo into the truck.");
+    }
+}
+
+
 
 // Main class
 public class Main {
@@ -85,5 +107,15 @@ public class Main {
         myMotorcycle.start();
         myMotorcycle.ride();
         myMotorcycle.stop();
+
+        System.out.println(); // Adding a newline for better output separation
+
+        Truck myTruck = new Truck("Ford", 1000);
+        myTruck.displayInfo();
+        myTruck.start();
+        myTruck.loadCargo();
+        myTruck.stop();
+
+        System.out.println(); // Adding a newline for better output separation
     }
 }
