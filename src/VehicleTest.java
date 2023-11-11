@@ -27,6 +27,17 @@ public class VehicleTest {
         }
     }
 
+    class Motorcycle extends Vehicle {
+        Motorcycle(String brand) {
+            super(brand);
+        }
+
+        @Override
+        void startEngine() {
+            System.out.println("Motorcycle engine start");
+        }
+    }
+
 
 
 
